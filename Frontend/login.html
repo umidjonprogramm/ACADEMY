@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academy | Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: #fff0d1;
+            color: #14243b;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+
+        .header {
+            background: #14243b;
+            padding: 25px 7%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 180px;
+            background: #e5bd70;
+            border-radius: 50%;
+            right: -120px;
+            top: -130px;
+            opacity: 0.8;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .brand h1 {
+            color: #e5bd70;
+            font-family: Georgia, serif;
+            font-size: 32px;
+            letter-spacing: 2px;
+        }
+
+        .brand p {
+            color: #fff;
+            font-family: Georgia, serif;
+            font-style: italic;
+            margin-top: 4px;
+            font-size: 14px;
+        }
+
+        /* MAIN */
+
+        .main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 55px 20px;
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #fff9e9,
+                    transparent 45%
+                ),
+                #fff0d1;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 520px;
+            background: #fffefa;
+            padding: 45px;
+            border-radius: 20px;
+            border: 1px solid #e5bd70;
+            box-shadow: 0 15px 45px rgba(20, 36, 59, 0.12);
+            text-align: center;
+        }
+
+        .cap {
+            font-size: 85px;
+            margin-bottom: 12px;
+        }
+
+        .login-card h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+            margin-bottom: 10px;
+            color: #14243b;
+        }
+
+        .subtitle {
+            color: #777;
+            font-size: 16px;
+            margin-bottom: 35px;
+        }
+
+        /* FORM */
+
+        .input-group {
+            margin-bottom: 17px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            height: 65px;
+            border: 1px solid #e0ddd5;
+            border-radius: 14px;
+            background: #f8f7f3;
+            padding: 0 55px 0 20px;
+            font-size: 17px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            border-color: #d5a94f;
+            box-shadow: 0 0 0 3px rgba(213, 169, 79, 0.15);
+            background: white;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 21px;
+            pointer-events: none;
+        }
+
+        .input-group input.with-icon {
+            padding-left: 55px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 17px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 19px;
+        }
+
+        /* BUTTON */
+
+        .login-button {
+            width: 100%;
+            height: 62px;
+            background: #14243b;
+            color: white;
+            border: none;
+            border-radius: 13px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            background: #263f60;
+            transform: translateY(-2px);
+        }
+
+        .forgot {
+            display: block;
+            margin-top: 25px;
+            color: #c28c32;
+            font-size: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .forgot:hover {
+            text-decoration: underline;
+        }
+
+        /* FLASH MESSAGE */
+
+        .flash {
+            background: #fff0d5;
+            color: #805b1e;
+            padding: 13px;
+            border-radius: 9px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #14243b;
+            color: #e5bd70;
+            text-align: center;
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 600px) {
+
+            .header {
+                padding: 20px;
+            }
+
+            .brand img {
+                width: 43px;
+                height: 43px;
+            }
+
+            .brand h1 {
+                font-size: 25px;
+            }
+
+            .brand p {
+                font-size: 12px;
+            }
+
+            .main {
+                padding: 35px 18px;
+            }
+
+            .login-card {
+                padding: 35px 22px;
+                border-radius: 16px;
+            }
+
+            .cap {
+                font-size: 70px;
+            }
+
+            .login-card h2 {
+                font-size: 29px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+                margin-bottom: 28px;
+            }
+
+            .input-group input {
+                height: 58px;
+                font-size: 15px;
+            }
+
+            .login-button {
+                height: 58px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="brand">
+
+            <img
+                src="{{ url_for('static', filename='logo.jpg') }}"
+                alt="Academy Logo"
+            >
+
+            <div>
+                <h1>ACADEMY</h1>
+                <p>Learn • Grow • Succeed</p>
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- LOGIN SECTION -->
+
+    <main class="main">
+
+        <div class="login-card">
+
+            <div class="cap">🎓</div>
+
+            <h2>Welcome Back</h2>
+
+            <p class="subtitle">
+                Welcome back to Academy
+            </p>
+
+
+            <!-- FLASH MESSAGES -->
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="flash">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+
+            <!-- LOGIN FORM -->
+
+            <form action="{{ url_for('login') }}" method="POST">
+
+                <div class="input-group">
+
+                    <span class="input-icon">✉</span>
+
+                    <input
+                        class="with-icon"
+                        type="text"
+                        name="login"
+                        placeholder="Login / Edu Email ID"
+                        required
+                        autocomplete="username"
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <span class="input-icon">🔒</span>
+
+                    <input
+                        class="with-icon"
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Password"
+                        required
+                        autocomplete="current-password"
+                    >
+
+                    <button
+                        type="button"
+                        class="toggle-password"
+                        onclick="togglePassword()"
+                        aria-label="Parolni ko‘rsatish"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+
+                <button type="submit" class="login-button">
+                    Log In →
+                </button>
+
+            </form>
+
+
+            <a href="#" class="forgot"
+               onclick="alert('Parolni tiklash uchun administratorga murojaat qiling.'); return false;">
+                Forgot Password?
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+        © 2026 Academy. All rights reserved.
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function togglePassword() {
+
+            const password = document.getElementById("password");
+
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
